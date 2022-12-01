@@ -1,6 +1,3 @@
-using SwagProject.Driver;
-using SwagProject.Pages;
-
 namespace SwagProject.Test
 {
     public class Tests
@@ -37,10 +34,13 @@ namespace SwagProject.Test
         [Test]
         public void TC02_SortProductByPrice_ShouldSortByHighPrice()
         {
+            //Act
             loginPage.Login("standard_user", "secret_sauce");
 
+            //Arrange
             productPage.SelectOption("Price (high to low)");
 
+            //Assert
             Assert.That(productPage.SortByPrice.Displayed);
         }
 
@@ -70,7 +70,7 @@ namespace SwagProject.Test
 
             cardPage.Finish.Click();
 
-            Assert.That("THANK YOU FOR YOUR ORDER",Is.EqualTo(cardPage.OrderFinished.Text));
+            Assert.That("THANK YOU FOR YOUR ORDER", Is.EqualTo(cardPage.OrderFinished.Text));
         }
 
     }
