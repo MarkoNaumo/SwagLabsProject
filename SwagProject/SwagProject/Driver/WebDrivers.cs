@@ -22,6 +22,7 @@ namespace SwagProject.Driver
             Instance.Navigate().GoToUrl("https://www.saucedemo.com/");
         }
 
+
         public static void CleanUp()
         {
             Instance?.Quit();
